@@ -17,7 +17,7 @@ let api_url;
 if (window.location.hostname === 'localhost') {
     api_url = 'http://localhost:8888/.netlify/functions/trivia';
 } else {
-    api_url = 'https://tudominio.netlify.app/.netlify/functions/trivia';
+    api_url = 'https://boricuatriviatest.netlify.app/.netlify/functions/trivia';
 }
 
 async function getQuestion() {
