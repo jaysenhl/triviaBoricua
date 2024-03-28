@@ -12,7 +12,14 @@ questionCard.style.display = 'none'
 const playerNameInput = document.getElementById('playerNameInput')
 let playerPoints = 0
 
-const api_url = 'https://localhost:8888.netlify.app/.netlify/functions/trivia';
+
+let api_url;
+if (window.location.hostname === 'localhost') {
+    api_url = 'http://localhost:8888/.netlify/functions/trivia';
+} else {
+    api_url = 'https://tudominio.netlify.app/.netlify/functions/trivia';
+}
+
 async function getQuestion() {
     try {
         const response = await fetch(api_url);
