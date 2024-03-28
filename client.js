@@ -1,6 +1,7 @@
 /*
 - add true or false container and questions
 - add shuffle algorithm
+- create questionCardContainer function
 */
 
 /* CODE FOR 

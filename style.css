@@ -89,6 +89,26 @@ label {
     border-radius: 15px;
 }
 
+#trueAnswerBtn{
+    background-color: #1fd586;
+    padding: 10px 30px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-family: "Edu NSW ACT Foundation", cursive;
+    color: white;
+    border-radius: 15px;
+}
+
+#falseAnswerBtn{
+    background-color: #d51f6b;
+    padding: 10px 30px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-family: "Edu NSW ACT Foundation", cursive;
+    color: white;
+    border-radius: 15px;
+}
+
 #questionCard {
     border-color: white;
     color: white;
