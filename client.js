@@ -1,6 +1,10 @@
 /*
 - add true or false container and questions
-- 
+- add shuffle algorithm
+*/
+
+/* CODE FOR 
+
 */
 
 const addPlayerBtn = document.getElementById('addPlayerBtn')
@@ -27,26 +31,31 @@ async function getQuestion() {
             throw new Error(`Error: ${response.statusText}`);
         }
         const data = await response.json();
-        console.log(data.questions); // Suponiendo que la función devuelve un objeto con una propiedad 'questions'
         return data.questions;
     } catch (error) {
         console.error('Error fetching questions:', error);
     }
+    return data
 }
 
-addPlayerBtn.addEventListener('click',()=>{
+addPlayerBtn.addEventListener('click', ()=>{
     createPlayerContainer.style.display = 'block'
     addPlayerBtn.style.display = 'none'
 })
 
-startGameBtn.addEventListener('click',()=>{
+function getPlayerName(){
+    let playerName = playerNameInput.value
+    return playerName
+}
+
+startGameBtn.addEventListener('click', async ()=>{
     // esconder create player container
     createPlayerContainer.style.display = 'none'
     // recojo el nombre
-    let playerName = playerNameInput.value
+    let playerName = getPlayerName()
     // hago el api call
-    getQuestion()
+    let questions = await getQuestion()
     // muestro la pregunta con los datos
     questionCard.style.display = 'block'
-
+    console.log(questions[0])
 })
