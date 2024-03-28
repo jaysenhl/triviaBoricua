@@ -12,13 +12,19 @@ questionCard.style.display = 'none'
 const playerNameInput = document.getElementById('playerNameInput')
 let playerPoints = 0
 
-const api_url = new URL('https://opentdb.com/api.php?amount=1&type=multiple')
-
-async function getQuestion(){
-    const response = await fetch(api_url)
-    const data = await response.json()
-    console.log(data.results[0])
-    return data.results[0]
+const api_url = 'https://localhost:8888.netlify.app/.netlify/functions/trivia';
+async function getQuestion() {
+    try {
+        const response = await fetch(api_url);
+        if (!response.ok) {
+            throw new Error(`Error: ${response.statusText}`);
+        }
+        const data = await response.json();
+        console.log(data.questions); // Suponiendo que la función devuelve un objeto con una propiedad 'questions'
+        return data.questions;
+    } catch (error) {
+        console.error('Error fetching questions:', error);
+    }
 }
 
 addPlayerBtn.addEventListener('click',()=>{
