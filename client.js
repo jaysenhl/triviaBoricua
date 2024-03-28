@@ -15,6 +15,9 @@ const startGameBtn = document.getElementById('startGameBtn')
 const questionCard = document.getElementById('questionCard')
 questionCard.style.display = 'none'
 const playerNameInput = document.getElementById('playerNameInput')
+const multiQuestionAnswerContainer = document.getElementById('multiQuestionAnswerContainer')
+const booleanAnswerContainer = document.getElementById('booleanAnswerContainer')
+
 let playerPoints = 0
 
 
@@ -56,7 +59,7 @@ startGameBtn.addEventListener('click', async ()=>{
     let playerName = getPlayerName()
     // hago el api call
     let questions = await getQuestion()
+    console.log(questions)
     // muestro la pregunta con los datos
     questionCard.style.display = 'block'
-    console.log(questions[0])
 })
