@@ -1,0 +1,142 @@
+[
+    {
+        "id": 1,
+        "type": "boolean",
+        "question": "¿Es San Juan la capital de Puerto Rico?",
+        "wrong_answers": ["No"],
+        "correct_answer": "Sí"
+    },
+    {
+        "id": 2,
+        "type": "multiple",
+        "question": "¿Cuál de estos platos es típico de la cocina puertorriqueña?",
+        "wrong_answers": ["Tacos", "Paella", "Ceviche"],
+        "correct_answer": "Mofongo"
+    },
+    {
+        "id": 3,
+        "type": "boolean",
+        "question": "¿El coquí es un símbolo nacional de Puerto Rico?",
+        "wrong_answers": ["No"],
+        "correct_answer": "Sí"
+    },
+    {
+        "id": 4,
+        "type": "multiple",
+        "question": "¿Qué estilo musical se originó en Puerto Rico?",
+        "wrong_answers": ["Tango", "Salsa", "Cumbia"],
+        "correct_answer": "Reggaetón"
+    },
+    {
+        "id": 5,
+        "type": "boolean",
+        "question": "¿Es el español el único idioma oficial de Puerto Rico?",
+        "wrong_answers": ["Sí"],
+        "correct_answer": "No"
+    },
+    {
+        "id": 6,
+        "type": "multiple",
+        "question": "¿Cuál es el apodo popular de Puerto Rico?",
+        "wrong_answers": ["Perla del Sur", "Isla del Sol", "Jardín del Atlántico"],
+        "correct_answer": "Isla del Encanto"
+    },
+    {
+        "id": 7,
+        "type": "boolean",
+        "question": "¿Puerto Rico es un estado de los Estados Unidos?",
+        "wrong_answers": ["Sí"],
+        "correct_answer": "No"
+    },
+    {
+        "id": 8,
+        "type": "multiple",
+        "question": "¿Qué animal es un símbolo nacional de Puerto Rico?",
+        "wrong_answers": ["Águila", "Jaguar", "Iguana"],
+        "correct_answer": "Cotorra puertorriqueña"
+    },
+    {
+        "id": 9,
+        "type": "boolean",
+        "question": "¿La moneda oficial de Puerto Rico es el peso?",
+        "wrong_answers": ["Sí"],
+        "correct_answer": "No"
+    },
+    {
+        "id": 10,
+        "type": "multiple",
+        "question": "¿Cuál es el nombre del observatorio astronómico famoso en Puerto Rico?",
+        "wrong_answers": ["Mauna Kea", "Paranal", "La Silla"],
+        "correct_answer": "Arecibo"
+    },
+    {
+        "id": 11,
+        "type": "boolean",
+        "question": "¿Puerto Rico ha participado en los Juegos Olímpicos como país independiente?",
+        "wrong_answers": ["Sí"],
+        "correct_answer": "No"
+    },
+    {
+        "id": 12,
+        "type": "multiple",
+        "question": "¿Cuál es uno de los principales productos exportados por Puerto Rico?",
+        "wrong_answers": ["Café", "Cacao", "Trigo"],
+        "correct_answer": "Dispositivos médicos"
+    },
+    {
+        "id": 13,
+        "type": "boolean",
+        "question": "¿Es el Yunque el único bosque tropical lluvioso en el sistema forestal nacional de EE. UU.?",
+        "wrong_answers": ["No"],
+        "correct_answer": "Sí"
+    },
+    {
+        "id": 14,
+        "type": "multiple",
+        "question": "¿Cuál de estas playas es famosa en Puerto Rico?",
+        "wrong_answers": ["Playa Waikiki", "Playa Copacabana", "Playa del Carmen"],
+        "correct_answer": "Playa Flamenco"
+    },
+    {
+        "id": 15,
+        "type": "boolean",
+        "question": "¿El café es una de las principales exportaciones agrícolas de Puerto Rico?",
+        "wrong_answers": ["No"],
+        "correct_answer": "Sí"
+    },
+    {
+        "id": 16,
+        "type": "multiple",
+        "question": "¿Cuál es un festival tradicional celebrado en Puerto Rico?",
+        "wrong_answers": ["Carnaval de Río", "Oktoberfest", "Festival de la Luz"],
+        "correct_answer": "Fiestas de la Calle San Sebastián"
+    },
+    {
+        "id": 17,
+        "type": "boolean",
+        "question": "¿La fortaleza de San Felipe del Morro está ubicada en Ponce?",
+        "wrong_answers": ["Sí"],
+        "correct_answer": "No"
+    },
+    {
+        "id": 18,
+        "type": "multiple",
+        "question": "¿Qué nombre recibe la pequeña isla-municipio al este de Puerto Rico?",
+        "wrong_answers": ["Isla Mona", "Culebra", "Gilligan"],
+        "correct_answer": "Vieques"
+    },
+    {
+        "id": 19,
+        "type": "boolean",
+        "question": "¿El plato tradicional 'mofongo' se elabora principalmente a base de plátano?",
+        "wrong_answers": ["No"],
+        "correct_answer": "Sí"
+    },
+    {
+        "id": 20,
+        "type": "multiple",
+        "question": "¿Cuál de estos deportes es muy popular en Puerto Rico?",
+        "wrong_answers": ["Críquet", "Rugby", "Balonmano"],
+        "correct_answer": "Béisbol"
+    }
+]
