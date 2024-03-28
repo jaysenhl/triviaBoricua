@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Edu+NSW+ACT+Foundation:wght@400..700&family=Workbench&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #222831;
+}
+
+
+
+#createPlayerContainer {
+    /* background-color: #EEEEEE; */
+    border:1px solid #e7e7e7;
+    box-shadow: 5px 5px #000000;
+    border-radius: 15px;
+    background-color: #31363F;
+}
+
+@keyframes colorChange {
+    0% {
+      color: rgb(255, 255, 255); /* Initial color */
+    }
+    50% {
+      color: blue; /* Intermediate color */
+    }
+    100% {
+      color: red; /* Return to initial color */
+    }
+  }
+
+#title {
+    animation: colorChange .5s infinite;
+    color: white;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    font-family: "Workbench", sans-serif;
+}
+
+label {
+    font-family: "Edu NSW ACT Foundation", cursive;
+    font-size: 1.5rem;
+}
+
+#startGameBtn,
+#addPlayerBtn {
+    background-color: #76ABAE;
+    padding: 1rem;
+    border-radius: 20px;
+    color: #EEEEEE;
+    font-family: "Edu NSW ACT Foundation", cursive;
+    font-size: 1.5rem;
+    box-shadow: 5px 5px 7px rgba(0, 0, 0, 0.6);
+    border-color: rgb(255, 255, 255);
+}
+
+#playerInfoContainer {
+    font-family: "Edu NSW ACT Foundation", cursive;
+    font-size: 1.5rem;
+    display: flex;
+    /* background-color:#76ABAE; */
+    border: 1px solid white;
+    border-color: white;
+    justify-content:space-around;
+    color: white;
+    box-shadow: 5px 5px 7px rgba(0, 0, 0, 0.6);
+    border-color: rgb(255, 255, 255);
+    background-color: #31363F;
+}
+#questionTextContainer {
+    background-color: #76ABAE;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    box-shadow: 5px 5px 7px rgba(0, 0, 0, 0.6);
+    border-color: rgb(255, 255, 255);
+}
+
+#multiAnswerBtn{
+    background-color: #76ABAE;
+    padding: 10px 30px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-family: "Edu NSW ACT Foundation", cursive;
+    color: white;
+    border-radius: 15px;
+}
+
+#questionCard {
+    border-color: white;
+    color: white;
+    border-color: rgb(255, 255, 255);
+}
