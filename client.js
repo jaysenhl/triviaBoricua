@@ -80,8 +80,6 @@ function displayQuestion() {
     }
 }
 
-
-
 startGameBtn.addEventListener('click', startGame);
 
 async function startGame() {
@@ -97,7 +95,6 @@ async function startGame() {
         console.log("No se pudieron cargar las preguntas");
     }
 }
-
 
 function createPlayerInfoComponent(){
     let playerName = getPlayerName()
@@ -166,10 +163,21 @@ function createMultipleAnswerComponent(answer1,answer2,answer3,answer4){
 function checkAnswer(selectedAnswer) {
     const currentQuestion = questions[currentIndex]; // Ajuste para el índice actual
     if (selectedAnswer === currentQuestion.correct_answer) {
+        Swal.fire({
+            icon: "success",
+            title: "Correcto!",
+            text: `${currentQuestion.correct_answer}`,
+            footer: `<h3>+10 puntos!</h3>`
+          });
         playerPoints++;
         console.log("Correcto! Puntos:", playerPoints);
     } else {
-        console.log("Incorrecto! La respuesta correcta era:", currentQuestion.correct_answer);
+        Swal.fire({
+            icon: "error",
+            title: "Incorrecto!",
+            text: `La respuesta correcta es: ${currentQuestion.correct_answer}`,
+            footer: `<h3>-10 puntos!</h3>`
+          });
         playerPoints--;
     }
 
