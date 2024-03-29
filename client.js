@@ -1,14 +1,8 @@
 /*
-- add true or false container
-- add multiquestion Container function
-- add shuffle algorithm
-- jugar
+- sweet alertjs
 - 
 */
 
-/* CODE FOR 
-
-*/
 
 const addPlayerBtn = document.getElementById('addPlayerBtn')
 const createPlayerContainer = document.getElementById('createPlayerContainer')
@@ -66,17 +60,22 @@ async function getQuestion() {
 function displayQuestion() {
     if (currentIndex < questions.length) {
         const currentQuestion = questions[currentIndex];
-        questionCard.innerHTML = ''; // Limpia el contenedor de la pregunta anterior
-        createPlayerInfoComponent(); // Actualiza la información del jugador si es necesario
+        questionCard.innerHTML = ''; 
+        createPlayerInfoComponent(); 
         createQuestionComponent(currentQuestion.question);
-        const allAnswers = [currentQuestion.correct_answer, ...currentQuestion.wrong_answers];
-        shuffleArray(allAnswers); // Mezcla las respuestas
-        createMultipleAnswerComponent(...allAnswers);
+
+        if (currentQuestion.type === 'multiple') {
+            const allAnswers = [currentQuestion.correct_answer, ...currentQuestion.wrong_answers];
+            shuffleArray(allAnswers); 
+            createMultipleAnswerComponent(...allAnswers);
+        } else if (currentQuestion.type === 'boolean') {
+            createBooleanAnswerComponent(currentQuestion.correct_answer);
+        }
     } else {
         console.log("Fin del juego");
-        // Aquí puedes manejar el fin del juego, como mostrar un mensaje o reiniciar el juego
     }
 }
+
 
 
 startGameBtn.addEventListener('click', startGame);
@@ -119,6 +118,23 @@ function createQuestionComponent(questionjson){
     questionContainer.append(questionText)
     questionCard.append(questionContainer)
 
+}
+
+function createBooleanAnswerComponent(correctAnswer) {
+    const booleanAnswerComponent = document.createElement('div');
+    booleanAnswerComponent.id = 'booleanAnswerComponent';
+    booleanAnswerComponent.classList.add('row', 'text-center', 'mt-4');
+
+    const answers = ['Sí', 'No']; // Puedes ajustar estos valores según sea necesario
+    answers.forEach(answer => {
+        const answerElement = document.createElement('button');
+        answerElement.classList.add('booleanAnswerBtn');
+        answerElement.textContent = answer;
+        answerElement.addEventListener('click', () => checkAnswer(answer === 'Sí' ? 'Sí' : 'No'));
+        booleanAnswerComponent.appendChild(answerElement);
+    });
+
+    questionCard.appendChild(booleanAnswerComponent);
 }
 
 function createMultipleAnswerComponent(answer1,answer2,answer3,answer4){

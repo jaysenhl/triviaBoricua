@@ -84,7 +84,7 @@ h3 {
     border-color: rgb(255, 255, 255);
 }
 
-.multiAnswerBtn{
+.multiAnswerBtn,.booleanAnswerBtn{
     background-color: #76ABAE;
     padding: 10px 30px;
     margin-top: 10px;
