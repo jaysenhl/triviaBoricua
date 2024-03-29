@@ -20,6 +20,8 @@ const booleanAnswerContainer = document.getElementById('booleanAnswerContainer')
 let playerPoints = 0
 let questions = [];
 let currentIndex = 0;
+let correctAnswersCount = 0;
+let incorrectAnswersCount = 0;
 
 let api_url;
 if (window.location.hostname === 'localhost') {
@@ -78,7 +80,28 @@ function displayQuestion() {
             createBooleanAnswerComponent(currentQuestion.correct_answer);
         }
     } else {
-        console.log("Fin del juego");
+        // Calcula el porcentaje de respuestas correctas
+        const totalQuestions = questions.length;
+        const correctAnswers = playerPoints / 10; // Asumiendo que cada pregunta correcta da 10 puntos
+        const incorrectAnswers = totalQuestions - correctAnswers;
+        const percentage = Math.round((correctAnswers / totalQuestions) * 100);
+
+        // Muestra el resultado final
+        Swal.fire({
+            title: '¡Las preguntas se acabaron!',
+            html: `
+                <p>Total de preguntas: ${totalQuestions}</p>
+                <p>Correctas: ${correctAnswers}</p>
+                <p>Incorrectas: ${incorrectAnswers}</p>
+                <p>Eres un ${percentage}% Boricua</p>
+            `,
+            icon: 'info',
+            confirmButtonText: 'Ver Resultados'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                // Aquí puedes reiniciar el juego o hacer otra acción
+            }
+        });
     }
 }
 
@@ -124,7 +147,6 @@ async function startGame() {
         console.log("No se pudieron cargar las preguntas");
     }
 }
-
 
 function createPlayerInfoComponent(){
     let playerName = getPlayerName()
@@ -191,33 +213,56 @@ function createMultipleAnswerComponent(answer1,answer2,answer3,answer4){
 }
 
 function checkAnswer(selectedAnswer) {
-    const currentQuestion = questions[currentIndex]; // Ajuste para el índice actual
+    const currentQuestion = questions[currentIndex];
     if (selectedAnswer === currentQuestion.correct_answer) {
+        playerPoints += 10;
+        correctAnswersCount++; // Incrementa el contador de respuestas correctas
         Swal.fire({
             icon: "success",
             title: "Correcto!",
             text: `${currentQuestion.correct_answer}`,
             footer: `<h3>+10 puntos!</h3>`
           });
-        playerPoints +=10;
-        console.log("Correcto! Puntos:", playerPoints);
     } else {
+        playerPoints -= 10;
+        incorrectAnswersCount++; // Incrementa el contador de respuestas incorrectas
         Swal.fire({
             icon: "error",
             title: "Incorrecto!",
             text: `La respuesta correcta es: ${currentQuestion.correct_answer}`,
             footer: `<h3>-10 puntos!</h3>`
           });
-        playerPoints-=10;
     }
 
-    currentIndex++; // Incrementar aquí después de validar la respuesta
+    currentIndex++;
     if (currentIndex < questions.length) {
-        displayQuestion(); // Continuar con la siguiente pregunta
+        displayQuestion();
     } else {
-        console.log("Fin del juego");
-        // Aquí puedes reiniciar el juego o mostrar los resultados
-
+        showFinalResults();
     }
 }
 
+function showFinalResults() {
+    const totalQuestions = correctAnswersCount + incorrectAnswersCount;
+    const percentage = Math.round((correctAnswersCount / totalQuestions) * 100);
+
+    Swal.fire({
+        title: '¡Las preguntas se acabaron!',
+        html: `
+            <p>Total de preguntas: ${totalQuestions}</p>
+            <p>Correctas: ${correctAnswersCount}</p>
+            <p>Incorrectas: ${incorrectAnswersCount}</p>
+            <p>Eres un ${percentage}% Boricua</p>
+        `,
+        icon: 'info',
+        confirmButtonText: 'Reiniciar'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            window.location.reload(); // Recarga la página y reinicia el juego
+
+            // TODO: En un futuro, puedes implementar la lógica para guardar los resultados en una base de datos aquí.
+            // Esto podría implicar enviar los resultados a un servidor mediante una solicitud HTTP
+            // y luego manejar esa solicitud en el servidor para almacenar los resultados en la base de datos.
+        }
+    });
+}
