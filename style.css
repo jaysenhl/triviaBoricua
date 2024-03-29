@@ -36,6 +36,11 @@ body {
     font-family: "Workbench", sans-serif;
 }
 
+#primage {
+    height: 75px;
+    margin-bottom: 10px;
+}
+
 label {
     font-family: "Edu NSW ACT Foundation", cursive;
     font-size: 1.5rem;
@@ -44,7 +49,7 @@ label {
 #startGameBtn,
 #addPlayerBtn {
     background-color: #76ABAE;
-    padding: 1rem;
+    padding: .5rem;
     border-radius: 20px;
     color: #EEEEEE;
     font-family: "Edu NSW ACT Foundation", cursive;
@@ -57,7 +62,7 @@ label {
     display: block; /* Hace que el botón sea un bloque para permitir el margen automático */
     margin: 0 auto; 
     background-color: #d51f56;
-    padding: 1rem;
+    padding: .5rem;
     border-radius: 20px;
     color: #EEEEEE;
     font-family: "Edu NSW ACT Foundation", cursive;
