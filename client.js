@@ -98,32 +98,26 @@ function createQuestionComponent(questionjson){
 function createMultipleAnswerComponent(answer1,answer2,answer3,answer4){
     const multipleAnswerComponent = document.createElement('div')
     multipleAnswerComponent.id = 'multipleAnswerComponent'
-    multipleAnswerComponent.classList.add('row', 'text-center')
+    multipleAnswerComponent.classList.add('row', 'text-center', 'mt-4')
 
     const answersComponent = document.createElement('div')
     answersComponent.classList.add('col-12','col-sm-10','offset-sm-1','col-md-8','offset-md-2')
 
-    // add event listener for the same id's and compare textcontent for answer validation
-    let answer_1_element = document.createElement('button')
-    answer_1_element.id = 'multiAnswerBtn'
-    answer_1_element.classList.add('multianswerbtn')
-    answer_1_element.textContent = answer1
-    let answer_2_element = document.createElement('button')
-    answer_2_element.id = 'multiAnswerBtn'
-    answer_2_element.classList.add('multianswerbtn')
-    answer_2_element.textContent = answer2
-    let answer_3_element = document.createElement('button')
-    answer_3_element.id = 'multiAnswerBtn'
-    answer_3_element.classList.add('multianswerbtn')
-    answer_3_element.textContent = answer3
-    let answer_4_element = document.createElement('button')
-    answer_4_element.id = 'multiAnswerBtn'
-    answer_4_element.classList.add('multianswerbtn')
-    answer_4_element.textContent = answer4
+    const answers = [answer1, answer2, answer3, answer4];
+    answers.forEach(answer => {
+        const answerElement = document.createElement('button');
+        answerElement.classList.add('multiAnswerBtn');
+        answerElement.textContent = answer;
+        answerElement.addEventListener('click', () => checkAnswer(answer));
+        answersComponent.appendChild(answerElement);
+    });
 
-    answersComponent.append(answer_1_element,answer_2_element,answer_3_element,answer_4_element)
-    multipleAnswerComponent.append(answersComponent)
-    questionCard.append(multipleAnswerComponent)
+    multipleAnswerComponent.appendChild(answersComponent)
+    questionCard.appendChild(multipleAnswerComponent)
 
 }
 
+function checkAnswer(selectedAnswer) {
+    // Aquí verificas si la respuesta seleccionada es correcta o no
+    console.log("Respuesta seleccionada:", selectedAnswer);
+}
