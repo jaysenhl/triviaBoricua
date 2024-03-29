@@ -24,7 +24,7 @@
         "id": 4,
         "type": "multiple",
         "question": "¿Qué estilo musical se originó en Puerto Rico?",
-        "wrong_answers": ["Tango", "Salsa", "Cumbia"],
+        "wrong_answers": ["Tango", "Bachata", "Cumbia"],
         "correct_answer": "Reggaetón"
     },
     {
@@ -138,5 +138,187 @@
         "question": "¿Cuál de estos deportes es muy popular en Puerto Rico?",
         "wrong_answers": ["Críquet", "Rugby", "Balonmano"],
         "correct_answer": "Béisbol"
+    },
+    {
+        "id": 21,
+        "type": "multiple",
+        "question": "Bad Bunny dijo: Eres un charro ______ una porquería",
+        "wrong_answers": ["El Gangster", "Ali Warington", "Molusco"],
+        "correct_answer": "Rocky The Kid"
+    },
+    {
+        "id": 22,
+        "type": "multiple",
+        "question": "Las tetas de _______",
+        "wrong_answers": ["Salinas", "Ponce", "Aguas Buenas"],
+        "correct_answer": "Cayey"
+    },
+    {
+        "id": 23,
+        "type": "multiple",
+        "question": "Cuantos Outlets hay en P.R",
+        "wrong_answers": ["3", "4", "2"],
+        "correct_answer": "1"
+    },
+    {
+        "id": 24,
+        "type": "multiple",
+        "question": "Tito Trinidad cuando gana una pelea grita: _____",
+        "wrong_answers": ["Gané", "Viva Puerto Rico", "Soy el mejor"],
+        "correct_answer": "Puñeta"
+    },
+    {
+        "id": 25,
+        "type": "multiple",
+        "question": "Como se conocìa antes Puerto Rico",
+        "wrong_answers": ["Borinquen", "Boriquen", "Bhoriken"],
+        "correct_answer": "Borikén"
+    },
+    {
+        "id": 26,
+        "type": "multiple",
+        "question": "Donde se encuentra la bahía bioluminiscente",
+        "wrong_answers": ["Mona", "Adjuntas", "Fajardo"],
+        "correct_answer": "Vieques"
+    },
+    {
+        "id": 27,
+        "type": "multiple",
+        "question": "¿Cuál es el nombre original taíno de Puerto Rico?",
+        "wrong_answers": ["Boricua", "Hayuya", "Caguax"],
+        "correct_answer": "Borikén"
+    },
+    {
+        "id": 28,
+        "type": "boolean",
+        "question": "¿El Yunque es el único bosque tropical lluvioso en el sistema forestal nacional de los Estados Unidos?",
+        "wrong_answers": ["No"],
+        "correct_answer": "Sí"
+    },
+    {
+        "id": 29,
+        "type": "multiple",
+        "question": "¿Qué tipo de animal es el coquí, símbolo de Puerto Rico?",
+        "wrong_answers": ["Ave", "Mamífero", "Insecto"],
+        "correct_answer": "Anfibio"
+    },
+    {
+        "id": 30,
+        "type": "boolean",
+        "question": "¿La bahía de San Juan es considerada la bahía bioluminiscente más grande del mundo?",
+        "wrong_answers": ["Sí"],
+        "correct_answer": "No"
+    },
+    {
+        "id": 31,
+        "type": "multiple",
+        "question": "¿En qué ciudad de Puerto Rico se encuentra la fortaleza de San Felipe del Morro?",
+        "wrong_answers": ["Ponce", "Mayagüez", "Arecibo"],
+        "correct_answer": "San Juan"
+    },
+    {
+        "id": 32,
+        "type": "boolean",
+        "question": "¿Puerto Rico es el mayor productor de ron en el mundo?",
+        "wrong_answers": ["Sí"],
+        "correct_answer": "No"
+    },
+    {
+        "id": 33,
+        "type": "multiple",
+        "question": "¿Cuál es el deporte más popular en Puerto Rico?",
+        "wrong_answers": ["Baloncesto", "Fútbol", "Voleibol"],
+        "correct_answer": "Béisbol"
+    },
+    {
+        "id": 34,
+        "type": "boolean",
+        "question": "¿Luis Fonsi y Daddy Yankee grabaron el video de 'Despacito' en Puerto Rico?",
+        "wrong_answers": ["No"],
+        "correct_answer": "Sí"
+    },
+    {
+        "id": 35,
+        "type": "multiple",
+        "question": "¿Cuál es el nombre del festival que se celebra en enero en San Juan, marcando el final de la temporada navideña?",
+        "wrong_answers": ["Fiesta de Pueblo", "Carnaval Ponceño", "Navidad Boricua"],
+        "correct_answer": "Festival de la Calle San Sebastián"
+    },
+    {
+        "id": 36,
+        "type": "boolean",
+        "question": "¿El café fue introducido a Puerto Rico por los españoles en el siglo 18?",
+        "wrong_answers": ["No"],
+        "correct_answer": "Sí"
+    },
+    {
+        "id": 37,
+        "type": "multiple",
+        "question": "¿Qué estructura en Puerto Rico fue conocida como el radiotelescopio más grande del mundo hasta su colapso en 2020?",
+        "wrong_answers": ["Telescopio de Guajataca", "Radar de Culebra", "Observatorio de Humacao"],
+        "correct_answer": "Observatorio de Arecibo"
+    },
+    {
+        "id": 38,
+        "type": "boolean",
+        "question": "¿Puerto Rico se convirtió en un Estado Libre Asociado de los Estados Unidos en 1952?",
+        "wrong_answers": ["No"],
+        "correct_answer": "Sí"
+    },
+    {
+        "id": 39,
+        "type": "multiple",
+        "question": "¿Cuál es el plato considerado como nacional en Puerto Rico?",
+        "wrong_answers": ["Arroz con gandules", "Pastelón", "Asopao"],
+        "correct_answer": "Mofongo"
+    },
+    {
+        "id": 40,
+        "type": "boolean",
+        "question": "¿El Viejo San Juan es reconocido por su arquitectura moderna?",
+        "wrong_answers": ["Sí"],
+        "correct_answer": "No"
+    },
+    {
+        "id": 41,
+        "type": "multiple",
+        "question": "¿Cuál es una de las tres bahías bioluminiscentes en Puerto Rico?",
+        "wrong_answers": ["Bahía de San Juan", "Bahía de Ponce", "Bahía de Aguadilla"],
+        "correct_answer": "Bahía Mosquito"
+    },
+    {
+        "id": 42,
+        "type": "boolean",
+        "question": "¿El Morro es una antigua estructura militar ubicada en Mayagüez?",
+        "wrong_answers": ["Sí"],
+        "correct_answer": "No"
+    },
+    {
+        "id": 43,
+        "type": "multiple",
+        "question": "¿Qué nombre recibe el tradicional evento de artes celebrado en honor a José Campeche?",
+        "wrong_answers": ["Fiestas de la Calle", "Carnaval de Campeche", "Sanse"],
+        "correct_answer": "La Campechada"
+    },
+    {
+        "id": 44,
+        "type": "boolean",
+        "question": "¿El inglés es el único idioma oficial de Puerto Rico?",
+        "wrong_answers": ["Sí"],
+        "correct_answer": "No"
+    },
+    {
+        "id": 45,
+        "type": "multiple",
+        "question": "¿Qué nombre recibe el faro histórico ubicado en Cabo Rojo?",
+        "wrong_answers": ["Faro Arecibo", "Faro Ponce", "Faro Vieques"],
+        "correct_answer": "Faro de Los Morrillos"
+    },
+    {
+        "id": 46,
+        "type": "boolean",
+        "question": "¿La salsa es un género musical que se originó en Puerto Rico?",
+        "wrong_answers": ["No"],
+        "correct_answer": "Sí"
     }
 ]

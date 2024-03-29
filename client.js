@@ -1,8 +1,10 @@
 /*
-- sweet alertjs
-- un boton de reiniciar juego
+- añadir cuantas preguntas quiero
+- anadir significado de puntuacion
+- algun algoritmo para validar que las preguntas no se repitan
 */
 
+const questionAmount = document.getElementById('questionAmountInput')
 const restartBtn = document.getElementById('restartBtn')
 restartBtn.style.display = 'none'
 const addPlayerBtn = document.getElementById('addPlayerBtn')
@@ -83,18 +85,46 @@ function displayQuestion() {
 startGameBtn.addEventListener('click', startGame);
 
 async function startGame() {
+    const totalQuestions = parseInt(questionAmount.value, 10); // Obtiene el valor como un número
+    const maxQuestions = 46; // Límite máximo de preguntas
+
+    // Verifica si el usuario ingresó más preguntas de las permitidas
+    if (totalQuestions > maxQuestions) {
+        // Muestra una alerta indicando el límite
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: `El límite máximo de preguntas es de ${maxQuestions}. Por favor, ingresa un número menor.`,
+            confirmButtonText: 'Intentar de nuevo'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                // Reinicia el estado del juego o la entrada para que el usuario pueda intentar nuevamente
+                createPlayerContainer.style.display = 'block';
+                questionCard.style.display = 'none';
+                questionAmount.value = ''; // Limpia el input
+            }
+        });
+        return; // Detiene la ejecución de la función para que el usuario pueda corregir la entrada
+    }
+
     createPlayerContainer.style.display = 'none'; // Oculta el contenedor de añadir jugador
     questionCard.style.display = 'block'; // Muestra el contenedor de la pregunta
 
     let data = await getQuestion();
     if (data && data.length > 0) {
         questions = shuffleArray(data); // Mezclar las preguntas
+
+        if (totalQuestions > 0) {
+            questions = questions.slice(0, totalQuestions);
+        }
+
         currentIndex = 0;
         displayQuestion();
     } else {
         console.log("No se pudieron cargar las preguntas");
     }
 }
+
 
 function createPlayerInfoComponent(){
     let playerName = getPlayerName()
@@ -169,7 +199,7 @@ function checkAnswer(selectedAnswer) {
             text: `${currentQuestion.correct_answer}`,
             footer: `<h3>+10 puntos!</h3>`
           });
-        playerPoints++;
+        playerPoints +=10;
         console.log("Correcto! Puntos:", playerPoints);
     } else {
         Swal.fire({
@@ -178,7 +208,7 @@ function checkAnswer(selectedAnswer) {
             text: `La respuesta correcta es: ${currentQuestion.correct_answer}`,
             footer: `<h3>-10 puntos!</h3>`
           });
-        playerPoints--;
+        playerPoints-=10;
     }
 
     currentIndex++; // Incrementar aquí después de validar la respuesta
@@ -187,6 +217,7 @@ function checkAnswer(selectedAnswer) {
     } else {
         console.log("Fin del juego");
         // Aquí puedes reiniciar el juego o mostrar los resultados
+
     }
 }
 

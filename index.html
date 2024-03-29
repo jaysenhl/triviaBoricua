@@ -22,14 +22,14 @@
         <section id="createPlayerContainer" class="row pt-2 pb-4 mb-4 text-center">
             <div class="col-12 col-sm-10 offset-sm-1 col-md-8 offset-md-2">
                 <label class="form-label text-light">Nombre</label><br>
-                <input id="playerNameInput" class="form-control" type="text" placeholder="Escribe tu nombre..." autocomplete="off"><br>
+                <input id="playerNameInput" class="form-control text-center" type="text" placeholder="Escribe tu nombre..." autocomplete="off"><br>
+                <label class="form-label text-light">Cuantas Preguntas Deseas Contestar</label><br>
+                <p class="text-danger"><strong>(máximo de 46 preguntas)</strong></p>
+                <input id="questionAmountInput" class="form-control text-center" type="number" placeholder="Si quieres todas escribe el 0..." autocomplete="off" min="0" max="46"><br>
                 <button id="startGameBtn" class="">Comenzar Juego</button>
             </div>
         </section>
-        <section id="questionCard">
-            
-        </section>
-
+        <section id="questionCard"></section>
     </div>
     <script src="client.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
