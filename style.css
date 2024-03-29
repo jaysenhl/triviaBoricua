@@ -9,8 +9,6 @@ body {
     background-color: #222831;
 }
 
-
-
 #createPlayerContainer {
     /* background-color: #EEEEEE; */
     border:1px solid #e7e7e7;
@@ -35,7 +33,6 @@ body {
     animation: colorChange .5s infinite;
     color: white;
     padding-top: 1rem;
-    padding-bottom: 1rem;
     font-family: "Workbench", sans-serif;
 }
 
@@ -47,6 +44,19 @@ label {
 #startGameBtn,
 #addPlayerBtn {
     background-color: #76ABAE;
+    padding: 1rem;
+    border-radius: 20px;
+    color: #EEEEEE;
+    font-family: "Edu NSW ACT Foundation", cursive;
+    font-size: 1.5rem;
+    box-shadow: 5px 5px 7px rgba(0, 0, 0, 0.6);
+    border-color: rgb(255, 255, 255);
+}
+
+#restartBtn {
+    display: block; /* Hace que el botón sea un bloque para permitir el margen automático */
+    margin: 0 auto; 
+    background-color: #d51f56;
     padding: 1rem;
     border-radius: 20px;
     color: #EEEEEE;

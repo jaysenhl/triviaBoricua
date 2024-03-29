@@ -1,9 +1,10 @@
 /*
 - sweet alertjs
-- 
+- un boton de reiniciar juego
 */
 
-
+const restartBtn = document.getElementById('restartBtn')
+restartBtn.style.display = 'none'
 const addPlayerBtn = document.getElementById('addPlayerBtn')
 const createPlayerContainer = document.getElementById('createPlayerContainer')
 createPlayerContainer.style.display = 'none'
@@ -28,7 +29,10 @@ if (window.location.hostname === 'localhost') {
 addPlayerBtn.addEventListener('click', ()=>{
     createPlayerContainer.style.display = 'block'
     addPlayerBtn.style.display = 'none'
+    restartBtn.style.display = 'block'
 })
+
+restartBtn.addEventListener('click',()=>location.reload())
 
 function getPlayerName(){
     let playerName = playerNameInput.value
