@@ -56,9 +56,14 @@ label {
     border-color: rgb(255, 255, 255);
 }
 
-#playerInfoContainer {
+h3 {
     font-family: "Edu NSW ACT Foundation", cursive;
     font-size: 1.5rem;
+}
+
+#playerInfoContainer {
+    font-family: "Edu NSW ACT Foundation", cursive;
+    font-size: 2rem;
     display: flex;
     /* background-color:#76ABAE; */
     border: 1px solid white;
