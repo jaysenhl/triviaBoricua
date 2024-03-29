@@ -41,6 +41,14 @@ function getPlayerName(){
     return playerName
 }
 
+function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+}
+
 async function getQuestion() {
     try {
         const response = await fetch(api_url);
@@ -48,27 +56,45 @@ async function getQuestion() {
             throw new Error(`Error: ${response.statusText}`);
         }
         const data = await response.json();
-        return data.questions;
+        return data.questions; // Asegúrate de que esto refleje la estructura de tu respuesta de la API
     } catch (error) {
         console.error('Error fetching questions:', error);
+        return []; // Devuelve un array vacío en caso de error para manejo seguro posterior
     }
-    return data
 }
 
-startGameBtn.addEventListener('click', async ()=>{
-    // esconder create player container
-    createPlayerContainer.style.display = 'none'
-    // recojo el nombre
-    let playerName = getPlayerName()
-    // hago el api call
-    let data = await getQuestion()
-    console.log(data)
-    
-    questionCard.style.display = 'block'
-    createPlayerInfoComponent()
-    createQuestionComponent(data[1].question)
-    createMultipleAnswerComponent(data[1].correct_answer, data[1].wrong_answers[0], data[1].wrong_answers[1],data[1].wrong_answers[2])
-})
+function displayQuestion() {
+    if (currentIndex < questions.length) {
+        const currentQuestion = questions[currentIndex];
+        questionCard.innerHTML = ''; // Limpia el contenedor de la pregunta anterior
+        createPlayerInfoComponent(); // Actualiza la información del jugador si es necesario
+        createQuestionComponent(currentQuestion.question);
+        const allAnswers = [currentQuestion.correct_answer, ...currentQuestion.wrong_answers];
+        shuffleArray(allAnswers); // Mezcla las respuestas
+        createMultipleAnswerComponent(...allAnswers);
+    } else {
+        console.log("Fin del juego");
+        // Aquí puedes manejar el fin del juego, como mostrar un mensaje o reiniciar el juego
+    }
+}
+
+
+startGameBtn.addEventListener('click', startGame);
+
+async function startGame() {
+    createPlayerContainer.style.display = 'none'; // Oculta el contenedor de añadir jugador
+    questionCard.style.display = 'block'; // Muestra el contenedor de la pregunta
+
+    let data = await getQuestion();
+    if (data && data.length > 0) {
+        questions = shuffleArray(data); // Mezclar las preguntas
+        currentIndex = 0;
+        displayQuestion();
+    } else {
+        console.log("No se pudieron cargar las preguntas");
+    }
+}
+
 
 function createPlayerInfoComponent(){
     let playerName = getPlayerName()
@@ -118,6 +144,21 @@ function createMultipleAnswerComponent(answer1,answer2,answer3,answer4){
 }
 
 function checkAnswer(selectedAnswer) {
-    // Aquí verificas si la respuesta seleccionada es correcta o no
-    console.log("Respuesta seleccionada:", selectedAnswer);
+    const currentQuestion = questions[currentIndex]; // Ajuste para el índice actual
+    if (selectedAnswer === currentQuestion.correct_answer) {
+        playerPoints++;
+        console.log("Correcto! Puntos:", playerPoints);
+    } else {
+        console.log("Incorrecto! La respuesta correcta era:", currentQuestion.correct_answer);
+        playerPoints--;
+    }
+
+    currentIndex++; // Incrementar aquí después de validar la respuesta
+    if (currentIndex < questions.length) {
+        displayQuestion(); // Continuar con la siguiente pregunta
+    } else {
+        console.log("Fin del juego");
+        // Aquí puedes reiniciar el juego o mostrar los resultados
+    }
 }
+
