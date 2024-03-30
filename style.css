@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Anton&family=Edu+NSW+ACT+Foundation:wght@400..700&family=Workbench&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display&family=Anton&family=Edu+NSW+ACT+Foundation:wght@400..700&family=Workbench&display=swap');
 * {
     margin: 0;
     padding: 0;
@@ -38,7 +38,7 @@ to {background-position: -100px 0px;background-size:2750px;}
 {
   display: flex;
   align-items: center;
-  justify-content: center;
+  /* justify-content: center; */
   flex-direction: column;
   position: absolute;
   margin: auto;
@@ -101,7 +101,7 @@ label {
     padding: .5rem;
     border-radius: 20px;
     color: #EEEEEE;
-    font-family: "Edu NSW ACT Foundation", cursive;
+    font-family: "Bebas Neue", sans-serif;
     font-size: 1.5rem;
     box-shadow: 5px 5px 7px rgba(0, 0, 0, 0.6);
     border-color: rgb(255, 255, 255);
@@ -114,29 +114,30 @@ label {
     padding: .5rem;
     border-radius: 20px;
     color: #EEEEEE;
-    font-family: "Edu NSW ACT Foundation", cursive;
+    font-family: "Bebas Neue", sans-serif;
     font-size: 1.5rem;
     box-shadow: 5px 5px 7px rgba(0, 0, 0, 0.6);
     border-color: rgb(255, 255, 255);
 }
 
 h3 {
-    font-family: "Edu NSW ACT Foundation", cursive;
+    font-family: "Bebas Neue", sans-serif;
     font-size: 1.5rem;
 }
 
 #playerInfoContainer {
-    font-family: "Edu NSW ACT Foundation", cursive;
+    font-family: "Bebas Neue", sans-serif;
+    /*font-family: "Edu NSW ACT Foundation", cursive;*/
     font-size: 2rem;
     display: flex;
     /* background-color:#76ABAE; */
+    color: white;
+    justify-content:space-around;
+    /* box-shadow: 5px 5px 7px rgba(0, 0, 0, 0.6);
     border: 1px solid white;
     border-color: white;
-    justify-content:space-around;
-    color: white;
-    box-shadow: 5px 5px 7px rgba(0, 0, 0, 0.6);
     border-color: rgb(255, 255, 255);
-    background-color: rgba(75, 75, 250, 0.3);
+    background-color: rgba(75, 75, 250, 0.3); */
 }
 #questionTextContainer {
     background-color: rgba(75, 75, 250, 0.3);
@@ -154,7 +155,8 @@ h3 {
     margin-top: 10px;
     margin-bottom: 5px;
     font-size: 1.3rem;
-    font-family: "Edu NSW ACT Foundation", cursive;
+    font-family: "Bebas Neue", sans-serif;
+    /* font-family: "Edu NSW ACT Foundation", cursive; */
     color: white;
     border-radius: 15px;
     box-shadow: 5px 5px 7px rgba(255, 255, 255, 0.6);
