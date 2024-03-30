@@ -1,7 +1,7 @@
 const questions = require('./questions.json');
 
 const allowedOrigins = [
-    'https://boricuatriviatest.netlify.app',
+    'https://triviaboricua.netlify.app',
     'http://localhost:8888', // Añade tus orígenes de desarrollo aquí
 ];
 
