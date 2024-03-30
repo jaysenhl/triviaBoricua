@@ -318,8 +318,8 @@
         "id": 46,
         "type": "boolean",
         "question": "¿La bachata es un género musical que se originó en Puerto Rico?",
-        "wrong_answers": ["No"],
-        "correct_answer": "Sí"
+        "wrong_answers": ["Si"],
+        "correct_answer": "No"
     },
     {
         "id": 47,
