@@ -157,8 +157,8 @@
         "id": 23,
         "type": "multiple",
         "question": "Cuantos Outlets hay en P.R",
-        "wrong_answers": ["3", "4", "2"],
-        "correct_answer": "1"
+        "wrong_answers": ["3", "4", "1"],
+        "correct_answer": "2"
     },
     {
         "id": 24,
@@ -317,8 +317,15 @@
     {
         "id": 46,
         "type": "boolean",
-        "question": "¿La salsa es un género musical que se originó en Puerto Rico?",
+        "question": "¿La bachata es un género musical que se originó en Puerto Rico?",
         "wrong_answers": ["No"],
         "correct_answer": "Sí"
+    },
+    {
+        "id": 47,
+        "type": "multiple",
+        "question": "Quiero ____ hasme ____ yo solo quiero un poco de _____",
+        "wrong_answers": ["Agua","Cerveza","Jugo"],
+        "correct_answer": "Café"
     }
 ]

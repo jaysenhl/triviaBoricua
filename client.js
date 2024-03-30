@@ -1,7 +1,7 @@
 /*
-- añadir cuantas preguntas quiero
-- anadir significado de puntuacion
 - algun algoritmo para validar que las preguntas no se repitan
+- añadir un timer de 
+- console log el id de las preguntas por si se repite alguna
 */
 
 const questionAmount = document.getElementById('questionAmountInput')
